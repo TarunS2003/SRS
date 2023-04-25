@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik+Wet+Paint&display=swap');
 html{
  height:100%;
@@ -5,22 +6,26 @@ html{
  margin:0;
 	padding: 0;
 	scroll-behavior: smooth;
+	scroll-snap-type: y mandatory;
 }
 body{
 	margin:0;
 	padding: 0;
 	width: 100%;
 	height: 100%;
-	background: radial-gradient(circle at center 300%, rgb(151, 10, 130) 0%, rgb(33, 33, 33) 100.2%);
+	background-color: #000015;
 	overflow: scroll;
 	cursor: url("cursor_brush.png"), auto;
-    
+    overflow-x: hidden;
+    z-index: 10;
     
  }
 header{
 	width:100vw;
 	margin:0px;
 	height: 100vh;
+    scroll-snap-align: start;
+    z-index: 1;
 
 
 }
@@ -28,7 +33,7 @@ h1{
 	margin: 0px;
 	padding-bottom: 5px;
 	width: 100%;
-	border-bottom:1px solid white;
+	border-bottom:4px groove slategray;
 	align-content: center;
 	justify-content: center;
 	display: flex;
@@ -39,6 +44,7 @@ h1{
    -webkit-user-select: none;
    -ms-user-select: none;
    height: 30%;
+   z-index: 1;
 
 }
 nav{
@@ -47,6 +53,7 @@ nav{
 	display: flex;
 	margin:0;
 	padding: 0;
+	z-index: 1;
 }
 
 #logo{
@@ -58,6 +65,8 @@ nav{
    -ms-user-select: none;
    margin:0;
 	padding: 0;
+	position: absolute;
+	z-index: 1;
 }
 
 
@@ -68,9 +77,10 @@ nav{
 	margin:0;
 	padding: 0;
 	font-size: 40px;
-	font-family: 'Rubik Wet Paint', cursive;
+	font-family: 'Merienda', cursive;
+    z-index: 1;
 	-webkit-background-clip: text;
-    background-image:linear-gradient(to right,#861657,#aa4465,#aa5864,#b76e77,#c6858d);
+    background-image:linear-gradient(to right,white,#861657,#aa4465,#aa5864,#b76e77,#c6858d,white);
     -webkit-text-fill-color: transparent;
     text-align: center;
 }
@@ -82,7 +92,7 @@ nav{
     display: flex;
     margin:0;
 	padding: 0;
-	
+	z-index: ;
 	justify-content: center;
 	flex-wrap: wrap;
 	
@@ -117,13 +127,128 @@ nav{
 .window{ 	
 width: 75%;
 align-self: center;
-transition: 5s;
+transition-delay: 5s;
 }
 #About{
 	width: 100vw;
 	height: 100vh;
-	background-color: #000015;
+	background-image: linear-gradient(to bottom,#28282B,transparent,#000015);
 	align-self: center;
-	
+	display: flex;
+	align-content: center;
+	justify-content: center;
+	z-index: -1;
 }
 
+
+body::-webkit-scrollbar{
+	width: 5px;
+}
+body::-webkit-scrollbar-track {
+  background: slategray;
+  box-shadow: inset 0 0 5px black;
+}
+body::-webkit-scrollbar-thumb {
+  background: darkgray;
+  border-radius: 5px;
+  border: 3px black;
+}
+#ctn-abt{
+	scroll-snap-align: start;
+	align-self: center;
+	background-image: linear-gradient(to right, #92fe9d,#00c9ff,#00c9ff, #92fe9d);
+	width: 85vw;
+	height: 85vh;
+	animation: bgpan 12s infinite linear;
+	background-size: 200% 100%;
+	justify-content: center;
+	display: flex;
+}
+@keyframes bgpan{
+	0%{
+		background-position: 0 0;
+      }
+    50%{
+    	background-position: -100% 0;
+    }
+    100%{
+    	background-position: 0 0;
+    }
+}
+#abt{
+    height: 90%;
+    width: 92%;
+    background-color: #000015;
+    align-self: center;
+    color: white;
+
+}
+#abt>h2{
+	margin-top: 5%;
+	margin-left: 7.5%;
+	font-family: 'Merienda', cursive;
+
+}
+#bubble1{
+	background-image: linear-gradient(to right,#52F4E0,#81F0E2,#94F0E4);
+	width: 4vw;
+	height: 4vw;
+	border-radius: 50%;
+	position: relative;
+	left: 40%;
+	top: 5%;
+	animation: bubble 20s ease-in-out infinite;
+    z-index: -1;
+    filter: blur(20px);
+
+}
+@keyframes bubble{
+	0%{
+		left: 40%;
+		top: 45%;
+		
+	}
+	50%{
+		left: 50%;
+		top: 20%;
+
+	}
+	75%{
+		left: 20%;
+		top: 30%;
+
+	}
+	100%{
+		left: 40%;
+		top: 45%;
+	}
+}
+
+.hidden{
+	opacity: 0;
+	transition: all 1s ease-in;
+	filter:blur(2px);
+	position: relative;
+	
+}
+.hidden_rep{
+	opacity: 0;
+	transition: all 1s ease-in;
+	filter:blur(2px);
+	position: relative;
+	
+}
+.show{
+	opacity: 1;
+	filter: blur(0px);
+    
+}
+#follower{
+	position: absolute;
+	width: 5vw;
+	height: 5vw;
+	border-radius: 50%;
+	background-image: linear-gradient(to right,#fc00ff,#00dbde);
+	filter: blur(20px);
+	z-index: 0;
+}
