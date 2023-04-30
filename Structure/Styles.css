@@ -33,7 +33,7 @@ h1{
 	margin: 0px;
 	padding-bottom: 5px;
 	width: 100%;
-	border-bottom:4px groove slategray;
+	
 	align-content: center;
 	justify-content: center;
 	display: flex;
@@ -83,6 +83,7 @@ nav{
     background-image:linear-gradient(to right,white,#861657,#aa4465,#aa5864,#b76e77,#c6858d,white);
     -webkit-text-fill-color: transparent;
     text-align: center;
+    text-shadow: -5px 0px 1px white;
 }
 
 #cont1{
@@ -129,6 +130,115 @@ width: 75%;
 align-self: center;
 transition-delay: 5s;
 }
+
+
+#bubble1{
+	background-image: linear-gradient(to right,#52F4E0,#81F0E2,#94F0E4);
+	width: 4vw;
+	height: 4vw;
+	border-radius: 50%;
+	position: relative;
+	left: 40%;
+	top: 60%;
+	animation: bubble 120s ease-out infinite;
+    z-index: -1;
+    filter: blur(20px);
+
+}
+@keyframes bubble{
+	0%{
+		left: 50%;
+		top: 50%;
+		
+	}
+	20%{
+		left: -50%;
+		top: 60%;
+
+	}
+	40%{
+		left: 50%;
+		top: 80%;
+
+	}
+	60%{
+		left: -50%;
+		top: 100%;
+	}
+	80%{
+		left: 50%;
+		top: 150;
+
+	}
+	100%{
+		left: -100%;
+		top: 210%;
+	}
+}
+
+.hidden{
+	opacity: 0;
+	transition: all 1s ease-in;
+	filter:blur(2px);
+	position: relative;
+	
+}
+.hidden_rep{
+	opacity: 0;
+	transition: all 1s linear;
+	filter:blur(2px);
+	position: relative;
+	
+}
+.show{
+	opacity: 1;
+	filter: blur(0px);
+    
+}
+#bubble2{
+	background-image: linear-gradient(to right,#7b4397,#dc2430);
+	width: 8vw;
+	height: 8vw;
+	border-radius: 50%;
+	position: absolute;
+    z-index: -1;
+    filter: blur(30px);
+    animation: secondbub 70s infinite linear;
+    
+}
+@keyframes secondbub{
+	0%{
+		bottom: 100%;
+		left: 0%;
+	}
+	25%{
+		filter: blur(20px);
+		bottom: 75%;
+		left: 25%;
+	}
+	50%{ 
+		width: 10vw;
+		height: 10vw;
+		filter: blur(15px);
+        left: 50%;
+        bottom: 50%;
+	}
+	75%{
+		width: 9vw;
+		height: 9vw;
+		filter: blur(25px);
+		bottom: 25%%;
+		left: 75%;
+
+	}
+	100%{
+		width: 8vw;
+        height: 8vw;
+        left: 100%;
+        bottom: 0%;
+        filter: blur(30px);
+	}
+}
 #About{
 	width: 100vw;
 	height: 100vh;
@@ -138,6 +248,7 @@ transition-delay: 5s;
 	align-content: center;
 	justify-content: center;
 	z-index: -1;
+	
 }
 
 
@@ -157,12 +268,16 @@ body::-webkit-scrollbar-thumb {
 	scroll-snap-align: start;
 	align-self: center;
 	background-image: linear-gradient(to right, #92fe9d,#00c9ff,#00c9ff, #92fe9d);
-	width: 85vw;
-	height: 85vh;
+	width: 90vw;
+	height: 90vh;
 	animation: bgpan 12s infinite linear;
 	background-size: 200% 100%;
 	justify-content: center;
 	display: flex;
+	flex-wrap: wrap;
+	
+	overflow: auto;
+	scroll-snap-type: y mandatory;
 }
 @keyframes bgpan{
 	0%{
@@ -176,11 +291,14 @@ body::-webkit-scrollbar-thumb {
     }
 }
 #abt{
-    height: 90%;
-    width: 92%;
+    height: 80%;
+    width: 100%;
     background-color: #000015;
     align-self: center;
     color: white;
+    margin: 20px;
+    display: inline;
+    scroll-snap-align: end;
 
 }
 #abt>h2{
@@ -189,61 +307,25 @@ body::-webkit-scrollbar-thumb {
 	font-family: 'Merienda', cursive;
 
 }
-#bubble1{
-	background-image: linear-gradient(to right,#52F4E0,#81F0E2,#94F0E4);
-	width: 4vw;
-	height: 4vw;
-	border-radius: 50%;
-	position: relative;
-	left: 40%;
-	top: 5%;
-	animation: bubble 20s ease-in-out infinite;
-    z-index: -1;
-    filter: blur(20px);
-
-}
-@keyframes bubble{
-	0%{
-		left: 40%;
-		top: 45%;
-		
-	}
-	50%{
-		left: 50%;
-		top: 20%;
-
-	}
-	75%{
-		left: 20%;
-		top: 30%;
-
-	}
-	100%{
-		left: 40%;
-		top: 45%;
-	}
+#projects{
+	width: 100%;
+    height: 80%;
+	background-color: #000015;
+    align-self: center;
+    color: white; 
+    margin: 20px;
+    display: inline;
+    scroll-snap-align: start;
 }
 
-.hidden{
-	opacity: 0;
-	transition: all 1s ease-in;
-	filter:blur(2px);
-	position: relative;
-	
-}
-.hidden_rep{
-	opacity: 0;
-	transition: all 1s ease-in;
-	filter:blur(2px);
-	position: relative;
-	
-}
-.show{
-	opacity: 1;
-	filter: blur(0px);
-    
-}
-#follower{
+
+
+
+
+
+
+
+/* #follower{
 	position: absolute;
 	width: 5vw;
 	height: 5vw;
@@ -251,4 +333,5 @@ body::-webkit-scrollbar-thumb {
 	background-image: linear-gradient(to right,#fc00ff,#00dbde);
 	filter: blur(20px);
 	z-index: 0;
-}
+} */
+
