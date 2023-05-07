@@ -24,6 +24,9 @@ const observer2 = new IntersectionObserver ((entries) => {
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer2.observe(el));
 
+
+
+
 // follower //
 
 let area = document.querySelector('body').getBoundingClientRect();
