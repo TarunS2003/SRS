@@ -24,7 +24,17 @@ const observer2 = new IntersectionObserver ((entries) => {
 const hiddenElements = document.querySelectorAll('.hidden');
 hiddenElements.forEach((el) => observer2.observe(el));
 
+const observer3 = new IntersectionObserver ((entries) => {
+  entries.forEach((entry) => {
+    console.log(entry)
+    if (entry.isIntersecting) {
+      entry.target.classList.add('slide_bottom');
+    } 
+  });
+});
 
+const hiddenslide = document.querySelectorAll('.hidden_top');
+hiddenslide.forEach((el) => observer3.observe(el));
 
 
 // follower //
