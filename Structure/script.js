@@ -29,7 +29,9 @@ const observer3 = new IntersectionObserver ((entries) => {
     console.log(entry)
     if (entry.isIntersecting) {
       entry.target.classList.add('slide_bottom');
-    } 
+    } else {
+      entry.target.classList.remove('slide_bottom');
+    }
   });
 });
 
