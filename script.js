@@ -57,3 +57,16 @@ document.addEventListener('mousemove', function(e) {
     follower.style.opacity = 0;
   }
 });
+
+let links = document.querySelectorAll('.cont');
+let windowimgs = document.querySelectorAll('.window');
+
+links.forEach(function(link, index) {
+  link.addEventListener('mouseover', function() {
+    windowimgs[index].src = 'Window open 1.png';
+  });
+  
+  link.addEventListener('mouseout', function() {
+    windowimgs[index].src = 'Window_closed1.png';
+  });
+});

@@ -13,8 +13,8 @@ body{
 	padding: 0;
 	width: 100%;
 	height: 100%;
-	background-color: #EEC0C6;
-	/*background-image: linear-gradient(to bottom, #0A143F, transparent);*/
+	background-color: #d9e4f5;
+background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
 	overflow: scroll;
 	cursor: url("cursor_brush.png"), auto;
     overflow-x: hidden;
@@ -29,8 +29,11 @@ header{
     z-index: 1;
     background-image: url("building background.jpeg");
     background-repeat: no-repeat;
-    background-size: 100% 55%;
+    background-size: 100% 52%;
     background-position: top center;
+    border: solid gray 10px;
+    border-top: 0px;
+    box-sizing: border-box;
 }
 h1{	
 
@@ -54,13 +57,13 @@ h1{
 
 }
 nav{
-	height: 50%;
+	height: 48%;
 	width: 100%;
 	display: flex;
 	margin:0;
 	padding: 0;
 	z-index: 1;
-	border-top: black groove 10px;
+	border-top:gray solid 10px;
 }
 
 #logo{
@@ -100,32 +103,61 @@ nav{
   font-size: 40px;
   font-family: 'Merienda', cursive;
   z-index: 1;
-  height: 18.5%;
+  height: 19%;
   -webkit-background-clip: text;
-  background-image: linear-gradient(to right, #EEC0C6, #861657, #aa4465, #aa5864, #b76e77, #c6858d, #EEC0C6);
+background-color: #0cbaba;
+background-image: Radial-gradient(circle, #0cbaba, #380036 74%);
+
+
   -webkit-text-fill-color: transparent;
   text-align: center;
-  animation: linkpan 25s infinite linear;
+  animation: linkpan 10s infinite linear;
   padding-right: 10px;
   margin: 0px;
+
 }
 
 @keyframes linkpan {
   0% {
     background-position: 0 0;
   }
-  50% {
+  100% {
     background-position: 158px 0;
   }
-  100% {
-    background-position: 0 0;
-  }
 }
-
-
+.cont{
+	border-radius: 5%;
+}
+.cont:hover{
+	background-color: #c3cbdc;
+  
+	transition: 1s;	
+}
+.cont::before,
+.cont::after {
+  position: absolute;
+  width: 7%;
+  height: 7%;
+  transition: 0.2s ease-in;
+  content: "";
+}
+.cont:hover::before {
+  left: 0;
+  top: 0;
+  border-radius: 10%;
+  border-left: 5px solid black;
+  border-top: 5px solid black;
+ }
+ .cont:hover::after {
+  right: 0;
+  bottom: 0;
+   border-radius: 10%;
+  border-right: 5px solid black;
+  border-bottom: 5px solid black;
+ }
 #cont1{
 	width: 25%;
-	background-color: whitesmoke;
+	/* background-color: #fffafa; */
 
     height: 100%;
 	display: flex;
@@ -138,8 +170,8 @@ nav{
 }   
 #cont2{
 	width: 25%;
-	background-color: whitesmoke;
-
+	/* background-color: #fffafa; */ 
+ 
     height: 100%;
     position: relative;
 	display: flex;
@@ -153,7 +185,7 @@ nav{
 }
 #cont3{
 	width: 25%;
-	background-color: whitesmoke;
+	/* background-color: #fffafa; */
 
     height: 100%;
 	display: flex;
@@ -167,7 +199,7 @@ nav{
 }
 #cont4{
 	width: 25%;
-	background-color: whitesmoke;
+	/* background-color: #fffafa; */
 
     height: 100%;
 	display: flex;
@@ -181,7 +213,7 @@ nav{
 .window{ 	
 width: 80%;
 align-self: center;
-transition-delay: 5s;
+transition: all 5s ease;
 margin: 0;
 padding: 0;
 position: relative;
@@ -269,17 +301,34 @@ background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
     left: 34%;
     top: 28%;
 }*/
-#About{
+#Home{
 	width: 100vw;
 	height: 100vh;
-	background-color: whitesmoke;
-
+	/*background-color: #fffafa; */
+  scroll-snap-align: start;
 	align-self: center;
 	display: flex;
 	align-content: center;
-	justify-content: center;
-	z-index: -1;
 	
+	z-index: -1;
+	border: solid gray 10px;
+	box-sizing: border-box;
+	text-align: left;
+
+}
+#About{
+	width: 100vw;
+	height: 100vh;
+	/*background-color: #fffafa; */
+  scroll-snap-align: start;
+	align-self: center;
+	display: flex;
+	align-content: center;
+	
+	z-index: -1;
+	border: solid gray 10px;
+	box-sizing: border-box;
+	text-align: left;
 }
 
 
@@ -295,8 +344,8 @@ body::-webkit-scrollbar-thumb {
   border-radius: 5px;
   border: 3px black;
 }
-#ctn-abt{
-	scroll-snap-align: start;
+/* #ctn-abt{
+	
 	align-self: center;
 	
 	width: 90vw;
@@ -321,7 +370,7 @@ background-image: linear-gradient(to bottom, #4d4855 0%, #000000 74%, #4d4855);
 
     }
 }
-#ctn-abt::-webkit-scrollbar{
+/* #ctn-abt::-webkit-scrollbar{
 	width: 5px;
 }
 #ctn-abt::-webkit-scrollbar-track {
@@ -343,15 +392,16 @@ background-image: linear-gradient(to bottom, #4d4855 0%, #000000 74%, #4d4855);
     display: inline;
     scroll-snap-align: end;
 
-}
-#abt>h2{
+} */
+.h2sec{
 	margin-top: 5%;
-	margin-left: 7.5%;
+	margin-left: 10%;
 	font-family: 'Merienda', cursive;
 	color: #606463;
-
+  justify-self: right ;	
 }
-#projects{
+
+/* #projects{
 	width: 100%;
     height: 81vh;
 	background-color: #c2eaba;
@@ -360,7 +410,8 @@ background-image: linear-gradient(to bottom, #4d4855 0%, #000000 74%, #4d4855);
     margin: 20px;
     display: inline;
     scroll-snap-align: start;
-}
+} */
+
 
 
 
