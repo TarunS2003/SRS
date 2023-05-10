@@ -90,27 +90,51 @@ document.addEventListener('mousemove', function(e) {
 });
 
 // ---- type writer effect ---- //
-const txt = 'Vision goes Here'; /* The text */
-const speed = 25; /* The speed/duration of the effect in milliseconds */
-var caretBlinkIntervalId;
-function typeWriter(element, i) {
-  if (i < txt.length) {
-    element.innerHTML += txt.charAt(i);
-    i++;
-    setTimeout(typeWriter, speed, element, i);
+const speed = 15; /* The speed/duration of the effect in milliseconds */
+
+function typeWriter(element) {
+  const txt = element.innerHTML;
+  let i = 0; // Index for tracking the current character
+
+  element.innerHTML = ''; // Clear the element's content
+
+  function type() {
+    if (i < txt.length) {
+      const char = txt.charAt(i);
+      element.innerHTML += char;
+      i++;
+
+      // Schedule the next character typing
+      setTimeout(type, speed);
+    }
   }
+
+  // Start typing when the element is intersected
+  const observer = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          observer.unobserve(entry.target); // Stop observing once element is intersected
+          type();
+        }
+      });
+    },
+    { threshold: 0.5 } // Adjust the threshold value as needed
+  );
+
+  observer.observe(element);
 }
 
-const observer = new IntersectionObserver((entries, observer) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      const element = entry.target;
-      let i = 0;
-      typeWriter(element, i);
-      observer.unobserve(element); // Stop observing the element once the effect has started
-    } 
-  });
+const elements = document.querySelectorAll('.type');
+elements.forEach((element) => {
+  typeWriter(element);
 });
 
-const vision = document.querySelector('#vision');
-observer.observe(vision);
+
+
+
+
+
+
+
+

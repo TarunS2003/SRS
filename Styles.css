@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Merienda:wght@800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Foldit&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Rubik+Wet+Paint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Foldit:wght@200;400&display=swap');
+
+
 html{
  height:100%;
  width: 100%;
@@ -10,6 +12,7 @@ html{
 	scroll-behavior: smooth;
 	scroll-snap-type: y mandatory;
 }
+
 body{
 	margin:0;
 	padding: 0;
@@ -21,8 +24,21 @@ background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
 	cursor: url("cursor_brush.png"), auto;
     overflow-x: hidden;
     z-index: 10;
-    
- }
+}
+
+body::-webkit-scrollbar{
+	width: 5px;
+}
+body::-webkit-scrollbar-track {
+  background: slategray;
+  box-shadow: inset 0 0 5px black;
+}
+body::-webkit-scrollbar-thumb {
+  background: darkgray;
+  border-radius: 5px;
+  border: 3px black;
+}
+
 header{
 	width:100vw;
 	margin:0px;
@@ -37,8 +53,8 @@ header{
     border-top: 0px;
     box-sizing: border-box;
 }
-h1{	
 
+#logoanchor{	
 	margin: 0px;
 	padding-bottom: 5px;
 	width: 100%;
@@ -55,8 +71,6 @@ h1{
    height: 50%;
    z-index: 1;
    position: relative;
-   
-
 }
 nav{
 	height: 48%;
@@ -75,19 +89,19 @@ nav{
    -webkit-user-drag: none;
    -webkit-user-select: none;
    -ms-user-select: none;
-   margin:0;
+   margin:auto;
 	padding: 0;
 	position: absolute;
-	z-index: 1;
 	top: 2%;
+	z-index: 1;
+	
 }
 
 
 .link {
-  align-self: top;
   width: 45%;
   text-decoration: none;
-  font-size: 40px;
+  font-size: 50px;
   font-family: 'Foldit', cursive;
   z-index: 1;
   height: 19%;
@@ -221,13 +235,17 @@ top: -10%;
 	z-index: 1;
 	position: relative;
 }
-.hidden{
-	opacity: ;
-	
-	filter:blur(0px);
-	position: relative;
-	
+.hidden {
+  
+  filter: blur(0px);
+  transition: visibility 0s linear 0.5s;
 }
+
+.visible {
+  visibility: visible;
+  transition: visibility 0s linear 0s;
+}
+
 .hidden_rep{
 	opacity: 0;
 	transition: all 1s linear;
@@ -256,54 +274,7 @@ top: -10%;
 	filter: blur(0px);
     
 }
-/*bubble1{
-background-color: #3bb78f;
-background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
-	width: 35vw;
-	height: 33.3vw;
-	
-	position: relative;
-	left: 35%;
-	top: 94%;
-	animation: bubble 1000s ease-out infinite;
-    z-index: -1;
-    filter: blur(4px);
 
-}
-@keyframes bubble{
-	
-} */
-
-
-/* #bubble2{
-	background-color: #3bb78f;
-background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
-	width: 35vw;
-	height: 33.3vw;
-	
-	position: absolute;
-    z-index: -1;
-    filter: blur(4px);
-    animation: secondbub 800s infinite linear;
-    top: 28%;
-    left: 0%;
-}
-@keyframes secondbub{
-	
-}*/
-/* #bubble3{
-	background-color: #3bb78f;
-background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
-	width: 35vw;
-	height: 33.3vw;
-	
-	position: absolute;
-    z-index: -1;
-     filter: blur(4px); 
-    
-    left: 34%;
-    top: 28%;
-}*/
 #Home{
 	width: 100vw;
 	height: 100vh;
@@ -312,129 +283,79 @@ background-image: linear-gradient(315deg, #3bb78f 0%, #0bab64 74%);
 	align-self: center;
 	display: flex;
 	align-content: center;
-	
+	justify-content: center;
 	z-index: -1;
 	border: inset gray 10px;
 	box-sizing: border-box;
-	text-align: left;
-
+	overflow: hidden;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 #About{
 	width: 100vw;
 	height: 100vh;
 	/*background-color: #fffafa; */
   scroll-snap-align: start;
-	align-self: center;
+	align-items: center;
 	display: flex;
 	align-content: center;
-	
+	justify-content: center;
 	z-index: -1;
 	border: inset gray 10px;
 	box-sizing: border-box;
-	text-align: left;
+	flex-direction: column;
+	overflow: hidden;
 }
 
 
-body::-webkit-scrollbar{
-	width: 5px;
-}
-body::-webkit-scrollbar-track {
-  background: slategray;
-  box-shadow: inset 0 0 5px black;
-}
-body::-webkit-scrollbar-thumb {
-  background: darkgray;
-  border-radius: 5px;
-  border: 3px black;
-}
-/* #ctn-abt{
-	
-	align-self: center;
-	
-	width: 90vw;
-	height: 90vh;
-	background-color: #4d4855;
-background-image: linear-gradient(to bottom, #4d4855 0%, #000000 74%, #4d4855);
-    animation: bgpan 12s infinite linear;
-	background-size: 200% 100%;
-	justify-content: center;
-	display: flex;
-	flex-wrap: wrap;
-	scroll-behavior: auto;
-	overflow: auto;
-	scroll-snap-type: y mandatory;
-}
-@keyframes bgpan{
-	0%{
-		background-position: 0 0;
-      }
-    100%{
-    	background-position: 0 90vh;
-
-    }
-}
-/* #ctn-abt::-webkit-scrollbar{
-	width: 5px;
-}
-#ctn-abt::-webkit-scrollbar-track {
-  background: slategray;
-  box-shadow: inset 0 0 5px black;
-}
-#ctn-abt::-webkit-scrollbar-thumb {
-  background: darkgray;
-  border-radius: 5px;
-  border: 3px black;
-}
-#abt{
-    height: 81vh;
-    width: 100%;
-    background-color: #c2eaba;
-    align-self: center;
-    color: white;
-    margin: 20px;
-    display: inline;
-    scroll-snap-align: end;
-
-} */
 .h2sec{
-	margin-top: 5%;
-	margin-left: 10%;
-		font-family: 'Foldit', cursive;
-	color: black;
-  justify-self: right ;	
-  font-size: 50px;
-}
-
-#vision{
 	font-family: 'Foldit', cursive;
-
+	color: black;
+  width: 18vw;
+  height: 25vh;
+  font-size: 80px;
+  display: flex;
+  margin-top: 2%;
 }
-/* #projects{
+
+#aboutus{
+	font-family: 'Poppins', sans-serif;
+	width: 98vw;
+	height: 75vh;
+	overflow: auto;
+	
+  margin-bottom: 6%;
+  
+}
+
+.titles{
+  text-align: center;
+	font-size: 48px;
 	width: 100%;
-    height: 81vh;
-	background-color: #c2eaba;
-    align-self: center;
-    color: white; 
-    margin: 20px;
-    display: inline;
-    scroll-snap-align: start;
-} */
-
-
-
-
-
-
-
-
-
-/* #follower{
-	position: absolute;
-	width: 5vw;
-	height: 5vw;
-	border-radius: 50%;
-	background-image: linear-gradient(to right,#fc00ff,#00dbde);
-	filter: blur(20px);
-	z-index: 0;
-} */
-
+	height: 25%;
+	scroll-snap-align: start;
+	margin-bottom: 50px;
+	color: #36454F;
+}
+.para{
+	width: 100%;
+	height: 75%;
+	margin-top: 50px;	
+	white-space: pre-wrap;
+}
+.forwardbutton{
+	width: 50px;
+	height: 50px;
+  background-image: url('arrow forward IOS.png');
+  background-position: 50% 50%;
+  background-color: transparent;
+  border: none;
+}
+.prevbutton{
+		width: 50px;
+	height: 50px;
+  background-image: url('arrow Back IOS.png');
+  background-position: 50% 50%;
+  background-color: transparent;
+  border: none;
+}
