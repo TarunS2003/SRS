@@ -90,7 +90,7 @@ document.addEventListener('mousemove', function(e) {
 });
 
 // ---- type writer effect ---- //
-const speed = 7; /* The speed/duration of the effect in milliseconds */
+const speed = 3; /* The speed/duration of the effect in milliseconds */
 
 function typeWriter(element) {
   const txt = element.innerHTML;

@@ -316,6 +316,23 @@ top: -10%;
   font-size: 80px;
   display: flex;
   margin-top: 5%;
+  animation: h2secpan 4s infinite linear;
+  -webkit-background-clip: text;
+background-color: #0cbaba;
+background-image: Radial-gradient(circle, #0cbaba, #380036 74%);
+background-size: 100% 100%;
+
+
+  -webkit-text-fill-color: transparent;
+
+}
+@keyframes h2secpan{
+	0% {
+		background-position: 0 0;
+	}
+	100%{
+		background-position: 240px 0;
+	}
 }
 
 #aboutus{
