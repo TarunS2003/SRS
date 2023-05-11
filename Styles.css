@@ -315,47 +315,91 @@ top: -10%;
   height: 25vh;
   font-size: 80px;
   display: flex;
-  margin-top: 2%;
+  margin-top: 5%;
 }
 
 #aboutus{
 	font-family: 'Poppins', sans-serif;
-	width: 98vw;
-	height: 75vh;
-	overflow: auto;
-	
-  margin-bottom: 6%;
-  
+	width: 80vw;
+	height: 80vh;
+	position: relative;
+ 	display: flex;
+  overflow: hidden;
+  align-items: center;
+  margin-bottom: 1%;
+
 }
 
 .titles{
   text-align: center;
 	font-size: 48px;
 	width: 100%;
-	height: 25%;
+	height: 10%;
 	scroll-snap-align: start;
-	margin-bottom: 50px;
 	color: #36454F;
+	margin-bottom: 75px; 
 }
 .para{
 	width: 100%;
 	height: 75%;
-	margin-top: 50px;	
+	font-size: 16px;
 	white-space: pre-wrap;
 }
 .forwardbutton{
 	width: 50px;
 	height: 50px;
   background-image: url('arrow forward IOS.png');
-  background-position: 50% 50%;
+  background-position: center center;
   background-color: transparent;
+  background-size: cover;
   border: none;
+  transition: 0.5s;
+  border-radius: 40%;
+  float: left;
+  margin-left: 50px;
+ 
 }
 .prevbutton{
 		width: 50px;
 	height: 50px;
   background-image: url('arrow Back IOS.png');
-  background-position: 50% 50%;
+  background-position: center center;
   background-color: transparent;
+  background-size: cover;
   border: none;
+  transition: 0.5s;
+  border-radius: 40%;
+  float: left;
+  margin-right: 50px;
+
+}
+.prevbutton:hover,
+.forwardbutton:hover{
+	background-color: gray;
+}
+.slide{
+   display: none; 
+   height: 100%;
+   width: 100%;
+   transition: all 3s;
+   opacity: 0;
+}
+.slide.active{
+display: inline;
+opacity: 1;
+}
+.slide.next{
+	display: none;
+  float: left;
+}
+.slide.prev{
+	display: none;
+
+}
+.flex_row{
+	display: flex;
+	height: 100vh;
+	flex-direction: row;
+
+	align-items: center;
 }
