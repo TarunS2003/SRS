@@ -90,7 +90,7 @@ document.addEventListener('mousemove', function(e) {
 });
 
 // ---- type writer effect ---- //
-const speed = 3; /* The speed/duration of the effect in milliseconds */
+const speed = 5; /* The speed/duration of the effect in milliseconds */
 
 function typeWriter(element) {
   const txt = element.innerHTML;
@@ -131,7 +131,6 @@ elements.forEach((element) => {
 });
 
 //---- slide buttons ---- //
-// Get references to the buttons and div elements
 const forwardButton = document.querySelector('.forwardbutton');
 const backwardButton = document.querySelector('.prevbutton');
 const slideContainers = document.querySelectorAll('.slide');
@@ -193,10 +192,4 @@ function getPrevIndex(activeIndex) {
   }
   return -1;
 }
-
-
-
-
-
-
 
