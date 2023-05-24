@@ -70,24 +70,66 @@ links.forEach(function(link, index) {
   });
 });
 
-// follower (not applied) //
+// follower //
 
-let area = document.querySelector('body').getBoundingClientRect();
-let follower = document.getElementById('follower');
-
-document.addEventListener('mousemove', function(e) {
-  let left = e.clientX;
-  let top = e.clientY;
-  let insideArea = (left >= area.left && left <= area.right && top >= area.top && top <= area.bottom);
-
-  if (insideArea) {
-    follower.style.opacity = 1;
-    follower.style.left = left + 'px';
-    follower.style.top = top + 'px';
-  } else {
-    follower.style.opacity = 0;
-  }
+const coords = { x: 0, y: 0 };
+const circles = document.querySelectorAll(".circle");
+const colors = [
+  "#861657",
+  "#92255e",
+  "#a53b69",
+  "#b34b71",
+  "#bd5777",
+  "#c35f7b",
+  "#cf6c81",
+  "#e4858e",
+  "#f09495",
+  "#ffa69e"
+];
+circles.forEach(function(circle, index) {
+  circle.x = 0;
+  circle.y = 0;
+  circle.style.backgroundColor = colors[index % colors.length];
 });
+
+window.addEventListener("mousemove", function(e) {
+  coords.x = e.clientX;
+  coords.y = e.clientY;
+});
+
+function animateCircles() {
+  let x = coords.x + window.scrollX;
+  let y = coords.y + window.scrollY;
+
+  circles.forEach(function(circle, index) {
+    circle.style.left = x - 10 + "px";
+    circle.style.top = y - 10 + "px";
+    circle.style.transform = `scale(${(circles.length - index) / circles.length})`;
+
+    circle.x = x;
+    circle.y = y;
+
+    const nextcircle = circles[index + 1] || circles[0];
+    x += (nextcircle.x - x) * 0.25;
+    y += (nextcircle.y - y) * 0.25;
+  });
+
+  requestAnimationFrame(animateCircles);
+}
+
+animateCircles();
+
+function hidetrail() {
+  circles.forEach(function(circle) {
+    circle.style.display = 'none';
+  });
+}
+
+function showtrail() {
+  circles.forEach(function(circle) {
+    circle.style.display = 'flex';
+  });
+}
 
 // ---- type writer effect ---- //
 const speed = 5; /* The speed/duration of the effect in milliseconds */
@@ -192,4 +234,9 @@ function getPrevIndex(activeIndex) {
   }
   return -1;
 }
+
+
+
+// hide sidebar //
+
 
