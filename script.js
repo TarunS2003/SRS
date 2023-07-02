@@ -1,31 +1,3 @@
-//---- repeat hiding ---- //
-const observer1 = new IntersectionObserver ((entries) => {
-  entries.forEach((entry) => {
-    console.log(entry)
-    if (entry.isIntersecting) {
-      entry.target.classList.add('show');
-    } else {
-      entry.target.classList.remove('show');
-    }
-  });
-});
-
-const hiddenRepeat = document.querySelectorAll('.hidden_rep');
-hiddenRepeat.forEach((el) => observer1.observe(el));
-
-//---- hidden for once ----//
-const observer2 = new IntersectionObserver ((entries) => {
-  entries.forEach((entry) => {
-    console.log(entry)
-    if (entry.isIntersecting) {
-      entry.target.classList.add ('show');
-    } 
-  });
-});
-
-const hiddenElements = document.querySelectorAll('.hidden');
-hiddenElements.forEach((el) => observer2.observe(el));
-
 // -----slide from top to bottom ---- //
 const observer3 = new IntersectionObserver ((entries) => {
   entries.forEach((entry) => {
@@ -178,8 +150,8 @@ const backwardButton = document.querySelector('.prevbutton');
 const slideContainers = document.querySelectorAll('.slide');
 
 // Add event listeners to the buttons
-forwardButton.addEventListener('click', handleForwardButtonClick);
-backwardButton.addEventListener('click', handleBackwardButtonClick);
+// forwardButton.addEventListener('click', handleForwardButtonClick);
+// backwardButton.addEventListener('click', handleBackwardButtonClick);
 
 // Event handler for the forward button click
 function handleForwardButtonClick() {
@@ -235,8 +207,30 @@ function getPrevIndex(activeIndex) {
   return -1;
 }
 
+// sidebar
+let sidebar = document.querySelector('.sidebar');
 
+function hidenav() {
+  sidebar.classList.add('hidenav');
+}
 
-// hide sidebar //
+function shownav() {
+  sidebar.classList.remove('hidenav');
+}
+
+const observer1 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      hidenav();
+    } else {
+      shownav();
+    }
+  });
+}, {
+   threshold: 0.1
+});
+
+const navbar = document.querySelector('header');
+observer1.observe(navbar);
 
 

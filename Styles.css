@@ -5,16 +5,16 @@
 
 
 html{
- height:100%;
+ height: 100%;
  width: 100%;
  margin:0;
 	padding: 0;
 	scroll-behavior: smooth;
-	scroll-snap-type: y mandatory;
+  scroll-snap-type: y mandatory;
 }
 
 body{
-	margin:0;
+	margin: 0;
 	padding: 0;
 	width: 100%;
 	height: 100%;
@@ -22,44 +22,45 @@ body{
 background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
 	overflow: scroll;
 	cursor: url("cursor_brush.png"), auto;
-    overflow-x: hidden;
+    overflow-x: hidden ;
     z-index: 10;
     position: absolute;
-}
+  }
 
-body::-webkit-scrollbar{
+html::-webkit-scrollbar{
 	width: 5px;
 }
-body::-webkit-scrollbar-track {
+html::-webkit-scrollbar-track {
   background: slategray;
   box-shadow: inset 0 0 5px black;
 }
-body::-webkit-scrollbar-thumb {
+html::-webkit-scrollbar-thumb {
   background: darkgray;
   border-radius: 5px;
   border: 3px black;
 }
 
-header{
+#header{
 	width:100vw;
 	margin:0px;
 	height: 100vh;
-    scroll-snap-align: start;
-    z-index: 1;
-    background-image: url("building background.jpeg");
+    scroll-snap-align: end;
+    z-index: 2;
+    /* background-image: url("building background.jpeg"); */
     background-repeat: no-repeat;
-    background-size: 100% 52%;
+    background-size: 100% 36%;
     background-position: top center;
-    border: inset gray 10px;
+    border: inset gray 5px;
     border-top: 0px;
     box-sizing: border-box;
+    overflow: hidden;
 }
 
 #logoanchor{	
 	margin: 0px;
 	padding-bottom: 5px;
 	width: 100%;
-	
+	background-color: #380036;
 	align-content: center;
 	justify-content: center;
 	display: flex;
@@ -69,20 +70,28 @@ header{
    -webkit-user-drag: none;
    -webkit-user-select: none;
    -ms-user-select: none;
-   height: 50%;
+   height: 35%;
    z-index: 1;
    position: relative;
 }
 #mainnav{
-	height: 48%;
+	height: 64.2%;
 	width: 100%;
 	display: flex;
 	margin:0;
 	padding: 0;
 	z-index: 1;
-	border-top:gray groove 10px;
+	border-top:gray groove 5px;
+	box-sizing: border-box;
 }
 
+#contacticon{
+	position: absolute;
+	height: 10vh;
+	width: 4vw;
+	top: 10%;
+	right: 8%;
+}
 #logo{
 	user-drag: none;  
    user-select: none;
@@ -93,8 +102,10 @@ header{
    margin:auto;
 	padding: 0;
 	position: absolute;
-	top: 2%;
+	top: 0%;
 	z-index: 1;
+  left: 5%;
+
 	
 }
 
@@ -105,6 +116,8 @@ header{
   font-size: 50px;
   font-family: 'Foldit', cursive;
   z-index: 1;
+  padding-top: 10px;
+  padding-bottom: 40px;
   height: 19%;
   -webkit-background-clip: text;
 background-color: #0cbaba;
@@ -113,7 +126,7 @@ background-image: Radial-gradient(circle, #0cbaba, #380036 74%);
 
   -webkit-text-fill-color: transparent;
   text-align: center;
-  animation: linkpan 10s infinite linear;
+  animation: linkpan 5s infinite linear;
   padding-right: 10px;
   margin: 0px;
 
@@ -137,26 +150,26 @@ background-image: Radial-gradient(circle, #0cbaba, #380036 74%);
 }
 .cont::before,
 .cont::after {
-  position: absolute;
-  width: 7%;
-  height: 7%;
-  transition: 0.2s ease-in;
-  content: "";
+position: absolute;
+width: 7%;
+height: 7%;
+transition: 0.2s ease-in;
+content: "";
 }
 .cont:hover::before {
-  left: 0;
-  top: 0;
-  border-radius: 10%;
-  border-left: 5px ridge black;
-  border-top: 5px ridge black;
- }
- .cont:hover::after {
-  right: 0;
-  bottom: 0;
-   border-radius: 10%;
-  border-right: 5px ridge black;
-  border-bottom: 5px ridge black;
- }
+left: 0;
+top: 0;
+border-radius: 10%;
+border-left: 5px ridge black;
+border-top: 5px ridge black;
+}
+.cont:hover::after {
+right: 0;
+bottom: 0;
+border-radius: 10%;
+border-right: 5px ridge black;
+border-bottom: 5px ridge black;
+}
 #cont1{
 	width: 25%;
 	/* background-color: #fffafa; */
@@ -213,7 +226,8 @@ background-image: Radial-gradient(circle, #0cbaba, #380036 74%);
 	flex-wrap: wrap;	
 }
 .window{ 	
-width: 80%;
+width: 70%;
+height: 60%;
 align-self: center;
 transition: all 5s ease;
 margin: 0;
@@ -236,24 +250,7 @@ top: -10%;
 	z-index: 1;
 	position: relative;
 }
-.hidden {
-  
-  filter: blur(0px);
-  transition: visibility 0s linear 0.5s;
-}
 
-.visible {
-  visibility: visible;
-  transition: visibility 0s linear 0s;
-}
-
-.hidden_rep{
-	opacity: 0;
-	transition: all 1s linear;
-	filter:blur(2px);
-	position: relative;
-	
-}
 .hidden_right{
 	position: relative;
 	right: 5%;
@@ -261,6 +258,7 @@ top: -10%;
 	opacity: 0.1;
 	filter: blur(10px);
 	z-index: -1;
+
 }
 .slide_left{
 	position: relative;
@@ -268,25 +266,18 @@ top: -10%;
 	opacity: 1;
 	filter: blur(0px);
 
-}
+}   
 
-.show{
-	opacity: 1;
-	filter: blur(0px);
-
-    
-}
-
-#Home{
+#home{
 	width: 100vw;
 	height: 100vh;
 	/*background-color: #fffafa; */
-  scroll-snap-align: start;
+  scroll-snap-align: end;
 		display: flex;
 
 	align-items: center;
 	z-index: -1;
-	border: inset gray 10px;
+	border: inset gray 5px;
 	box-sizing: border-box;
 	overflow: hidden;
   flex-direction: column;
@@ -296,27 +287,25 @@ top: -10%;
 	width: 100vw;
 	height: 100vh;
 	/*background-color: #fffafa; */
-  scroll-snap-align: start;
+  scroll-snap-align: end;
 	align-items: center;
 	display: flex;	
 	z-index: -1;
-	border: inset gray 10px;
+	border: inset gray 5px;
 	box-sizing: border-box;
 	flex-direction: column;
-	overflow: auto;
+	overflow: hidden;
 	position: relative;
-	scroll-snap-type: y mandatory;
-
 }
 .aboutsec{
 	width: 100vw;
 	height: 100vh;
 	/*background-color: #fffafa; */
-  scroll-snap-align: start;
+  scroll-snap-align: end;
 	align-items: center;
 	display: flex;	
 	z-index: -1;
-	border: inset gray 10px;
+	border: inset gray 5px;
 	box-sizing: border-box;
 	flex-direction: column;
 	overflow: auto;
@@ -326,21 +315,19 @@ top: -10%;
 .slidecont{
 height: 100vh;
 width: 85vw;  
-
- scroll-snap-align: start;
 }
 
 .h2sec{
 	font-family: 'Foldit', cursive;
 	color: black;
   font-size: 80px; 
-  animation: h2secpan 4s infinite linear;
+  animation: h2secpan 60s infinite linear;
   -webkit-background-clip: text;
 background-color: #0cbaba;
 background-image: Radial-gradient(circle, #0cbaba, #380036 74%);
 background-size: 100% 100%;
 box-sizing: border-box;
-height: 12vh;
+height: 12.5vh;
 margin-top: 1%;
   -webkit-text-fill-color: transparent;
   text-align: center;
@@ -361,9 +348,42 @@ margin-top: 1%;
 	font-size: 48px;
 	color: #36454F;
 	font-family: 'poppins', cursive;
-	scroll-snap-align: start;
   height: 19vh;
-	
+  position: relative;
+  bottom: 5%;
+	left: 4%;
+}
+#aboutlogo{
+	position: absolute;
+	width: 16vw;
+	height: 16vh;
+  top: 28%;
+  margin: 0px;
+  right: 68%;
+  background-image: linear-gradient(55deg, #380036 65%, transparent 90%, #380036 98%);
+  border-radius: 10%;
+  border: groove 5px black;
+  transition: 2s;
+  z-index: 1;
+}
+#aboutlogo:hover{
+ 
+	background-color: #380036;
+  cursor: pointer;
+}
+.about_title{
+	left: 15%;
+}
+.home_text{
+	position: relative;
+	top: 1%;
+  left: 44%;
+  font-family: 'poppins', cursive;
+  font-size: 118%;
+  color: slategray;
+  font-weight: bold;
+  text-align: right;
+
 }
 .para{	
 		font-size: 24px;
@@ -372,6 +392,9 @@ margin-top: 1%;
   text-align: center;
    margin: auto;
    width: 85%;
+   position: relative;
+   left: 4%;
+   bottom: 6%;
 }
 
 .flex_row{
@@ -382,18 +405,16 @@ margin-top: 1%;
 	align-items: center;
 }
 .forwardbutton{
-	width: 50px;
-	height: 50px;
+	display: inline-block;
+	width: 4vw;
+	height: 10vh;
   background-image: url('arrow forward IOS.png');
   background-position: center center;
   background-color: transparent;
   background-size: cover;
   border: none;
   transition: 0.5s;
-  border-radius: 40%;
-  float: left;
-  margin-left: 50px;
- 
+  border-radius: 40%; 
 }
 .prevbutton{
 		width: 50px;
@@ -432,6 +453,7 @@ opacity: 1;
 	display: none;
 
 }
+
 .circle{
 	height: 24px;
 	width: 24px;
@@ -441,4 +463,59 @@ opacity: 1;
 	left: 0;
 	top: 0;
 	display: none;
+	z-index: -1;
 }
+.sidebar{
+	height: 100vh;
+	width: 6vw;
+	background-color: slategray;
+
+  
+	position: fixed;
+	top:1;
+	transition: 200ms ease;
+  border-right: 5px;
+  border-top: 5px;
+  border-bottom: 5px;
+  border-left: 5px;
+  border-color: gray;
+  	border-radius: 2px;
+	border-style: inset;
+/*	border-top: 10px; 
+	border-bottom: 10px;
+
+	border-left: 0px; */
+	display: inline-block;
+	box-sizing: border-box;
+
+/*	padding: 4px; */	
+  animation: navpan 120s infinite linear;
+}
+@keyframes navpan{
+	0%{
+		background-position: 0 0;
+	}
+	100% {
+		background-position: 0 200em;
+	}
+}
+.sidebarlink{
+	width: 100%;
+	height: 12%;
+	margin-top: 4px;
+	display: inline-block;
+/*	border: 0.5px gray ridge; */
+	overflow: hidden;
+	border-radius: 0%;
+	box-sizing: border-box;
+	background-image: linear-gradient(40deg, slategray 10%, transparent 50%, slategray 95%);
+	transition: 700ms ease-out;
+}	
+.sidebarlink:hover{
+	background-color: #9999ff;
+}
+.hidenav{
+	display: none;
+
+}
+ 

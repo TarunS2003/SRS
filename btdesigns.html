@@ -3,47 +3,221 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>SRS | Desgins </title>
+	<title>SRS | Bathroom Desgins </title>
 	<style type="text/css">
+	.hidden_top{
+	position: relative;
+	top: 5%;
+	transition: all 0.5s ease-out;
+	opacity: 0.1;
+	filter: blur(10px);	
+}	 
+.slide_bottom{
+	top: 0%;
+	opacity: 1;
+	filter: blur(0);
+	position: relative;
+}
+    html{
+    	height: 100%;
+    	width: 100%;
+    	scroll-snap-type: y mandatory;
+    }
+    body{
+        height: 100%;
+        width: 100%;
+    	margin: 0;
+    	padding: 0px;
+    	
+    	box-sizing: border-box;
+    	overflow: auto;
+    	background-color: #d9e4f5;
+background-image: linear-gradient(315deg, #d9e4f5 0%, #f5e3e6 74%);
+overflow-x: hidden;
+cursor: url("cursor_brush.png"), auto;
+    }
     .image{
     	float: left;
     	width: 24vw;
-    	height: 50vh;
+    	height: 50%;
     	box-sizing: border-box;
-    	margin: 0;
+    	margin: 3.2px;
+    	
     }	
+   body::-webkit-scrollbar{
+	width: 5px;
+}
+body::-webkit-scrollbar-track {
+  background: slategray;
+  box-shadow: inset 0 0 5px black;
+}
+body::-webkit-scrollbar-thumb {
+  background: darkgray;
+  border-radius: 5px;
+  border: 10px black;
+}
+.snap{
+	scroll-snap-align: start;
+	width: 100%;
+	height: 73vh;
+	margin: 0;
+	padding: 0;
+	border: 10px gray inset;
+	box-sizing: border-box;
+	position: relative;
+}
+header{
+	width:100vw;
+	margin:0px;
+	height: 27vh;
+    scroll-snap-align: start;
+    z-index: 1;
+    background-color: lightgray;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-position: top center;
+    border-bottom: inset gray 5px;
+    border-top: 0px;
+    box-sizing: border-box;
+    position: fixed;
+    overflow: hidden;
+}
 
-	</style>
+#logoanchor{	
+    margin-left: 40px;
+	width: 25%;
+	align-content: center;
+	justify-content: center;
+	display: flex;
+	user-drag: none;  
+   user-select: none;
+   -moz-user-select: none;
+   -webkit-user-drag: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+   height: 100%;
+   z-index: 1;
+}
+
+
+#logo{
+	user-drag: none;  
+   user-select: none;
+   -moz-user-select: none;
+   -webkit-user-drag: none;
+   -webkit-user-select: none;
+   -ms-user-select: none;
+    width: 100%;
+	padding: 10px;
+		z-index: 1;
+	
+}
+
+
+.link{
+  width: 20%;
+  text-decoration: none;
+  font-size: 50px;
+  font-family: 'Foldit', cursive;
+  z-index: 1;
+  height: 20%;
+  -webkit-background-clip: text;
+background-color: #0cbaba;
+background-image: Radial-gradient(circle, #0cbaba, #380036 74%);
+
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  animation: linkpan 10s infinite linear;
+}
+
+@keyframes linkpan {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 158px 0;
+  }
+}
+
+.circle{
+	height: 24px;
+	width: 24px;
+	border-radius: 24px;
+	background-color: #aa5864;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 2;
+}	
+
+</style>
 </head>
 <body>
-<img src="Bt01.jpeg" alt="" id="image1" class="image">
-<img src="Bt02.jpeg" alt="" id="image2" class="image">
-<img src="Bt03.jpeg" alt="" id="image3" class="image">
-<img src="Bt04.jpeg" alt="" id="image4" class="image">
-<img src="Bt05.jpeg" alt="" id="image5" class="image">
-<img src="Bt06.jpeg" alt="" id="image6" class="image">
-<img src="Bt07.jpeg" alt="" id="image7" class="image">
-<img src="Bt08.jpeg" alt="" id="image8" class="image">
-<img src="Bt09.jpeg" alt="" id="image9" class="image">
-<img src="Bt10.jpeg" alt="" id="image10" class="image">
-<img src="Bt11.jpeg" alt="" id="image11" class="image">
-<img src="Bt12.jpeg" alt="" id="image12" class="image">
-<img src="Bt13.jpeg" alt="" id="image13" class="image">
-<img src="Bt14.jpeg" alt="" id="image14" class="image">
-<img src="Bt15.jpeg" alt="" id="image15" class="image">
-<img src="Bt16.jpeg" alt="" id="image16" class="image">
-<img src="Bt17.jpeg" alt="" id="image17" class="image">
-<img src="Bt18.jpeg" alt="" id="image18" class="image">
-<img src="Bt19.jpeg" alt="" id="image19" class="image">
-<img src="Bt20.jpeg" alt="" id="image20" class="image">
-<img src="Bt21.jpeg" alt="" id="image21" class="image">
-<img src="Bt22.jpeg" alt="" id="image22" class="image">
-<img src="Bt23.jpeg" alt="" id="image23" class="image">
-<img src="Bt24.jpeg" alt="" id="image24" class="image">
-<img src="Bt25.jpeg" alt="" id="image25" class="image">
-<img src="Bt26.jpeg" alt="" id="image26" class="image">
-<img src="Bt27.jpeg" alt="" id="image27" class="image">
-<img src="Bt28.jpeg" alt="" id="image28" class="image">
-<img src="Bt29.jpeg" alt="" id="image29" class="image">
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<div class="circle"></div>
+	<header>
+	
+
+	        <a href="index.html" id="logoanchor">
+            <img src="SRS.png" id="logo" class="hidden" height="70%"> 
+            </a>
+
+        <a class="link hidden_top" href="#Home">Home</a>
+		
+		
+            <a class="link hidden_top" href="#About">About</a>
+			
+		
+	    	<a class="link hidden_top" href="btdesigns.html" onclick="window.location.href='btdesigns.html'">Designs</a>
+	    	
+	   
+			<a class="link hidden_top"  href="" >Contact</a>
+		   </header>
+<section id="sec1" class="snap">
+<img src="/bt/Bt01.jpeg" alt="" id="image1" class="image hidden_top">
+<img src="/bt/Bt02.jpeg" alt="" id="image2" class="image hidden_top">
+<img src="/bt/Bt03.jpeg" alt="" id="image3" class="image hidden_top">
+<img src="/bt/Bt04.jpeg" alt="" id="image4" class="image hidden_top">
+<img src="/bt/Bt05.jpeg" alt="" id="image5" class="image hidden_top">
+<img src="/bt/Bt06.jpeg" alt="" id="image6" class="image hidden_top">
+<img src="/bt/Bt07.jpeg" alt="" id="image7" class="image hidden_top">
+<img src="/bt/Bt08.jpeg" alt="" id="image8" class="image hidden_top">
+</section>
+<section id="sec2" class="snap">
+<img src="/bt/Bt09.jpeg" alt="" id="image9" class="image hidden_top">
+<img src="/bt/Bt10.jpeg" alt="" id="image10" class="image hidden_top">
+<img src="/bt/Bt11.jpeg" alt="" id="image11" class="image hidden_top">
+<img src="/bt/Bt12.jpeg" alt="" id="image12" class="image hidden_top">
+<img src="/bt/Bt13.jpeg" alt="" id="image13" class="image hidden_top">
+<img src="/bt/Bt14.jpeg" alt="" id="image14" class="image hidden_top">
+<img src="/bt/Bt15.jpeg" alt="" id="image15" class="image hidden_top">
+<img src="/bt/Bt16.jpeg" alt="" id="image16" class="image hidden_top">
+</section>
+<section id="sec3" class="snap">
+<img src="/bt/Bt17.jpeg" alt="" id="image17" class="image hidden_top">
+<img src="/bt/Bt18.jpeg" alt="" id="image18" class="image hidden_top">
+<img src="/bt/Bt19.jpeg" alt="" id="image19" class="image hidden_top">
+<img src="/bt/Bt20.jpeg" alt="" id="image20" class="image hidden_top">
+<img src="/bt/Bt21.jpeg" alt="" id="image21" class="image hidden_top">
+<img src="/bt/Bt22.jpeg" alt="" id="image22" class="image hidden_top">
+<img src="/bt/Bt23.jpeg" alt="" id="image23" class="image hidden_top">
+<img src="/bt/Bt24.jpeg" alt="" id="image24" class="image hidden_top">
+</section>
+<section id="sec4" class="snap">
+<img src="/bt/Bt25.jpeg" alt="" id="image25" class="image hidden_top">
+<img src="/bt/Bt26.jpeg" alt="" id="image26" class="image hidden_top">
+<img src="/bt/Bt27.jpeg" alt="" id="image27" class="image hidden_top">
+<img src="/bt/Bt28.jpeg" alt="" id="image28" class="image hidden_top">
+<img src="/bt/Bt29.jpeg" alt="" id="image29" class="image hidden_top">
+</section>
+<script src="script.js" type="text/javascript" defer></script>
 </body>
 </html>
