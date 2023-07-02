@@ -405,7 +405,7 @@ margin-top: 1%;
 	align-items: center;
 }
 .forwardbutton{
-	display: inline-block;
+	
 	width: 4vw;
 	height: 10vh;
   background-image: url('arrow forward IOS.png');
