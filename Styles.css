@@ -409,55 +409,66 @@ margin-top: 1%;
 	width: 4vw;
 	height: 10vh;
   background-image: url('arrow forward IOS.png');
-  background-position: center center;
+  background-position: 0 0;
   background-color: transparent;
   background-size: cover;
   border: none;
   transition: 0.5s;
   border-radius: 40%; 
+  align-self: center;
+  margin: auto;
+  position: relative;
+  right: 20%;
+  border: groove 5px darkcyan;
+  background-color: lightblue;
 }
 .prevbutton{
-		width: 50px;
-	height: 50px;
+		width: 4vw;
+	height: 10vh;
   background-image: url('arrow Back IOS.png');
-  background-position: center center;
+  background-position: -100% 0;
   background-color: transparent;
   background-size: cover;
   border: none;
   transition: 0.5s;
   border-radius: 40%;
-  float: left;
-  margin-right: 50px;
-
+   align-self: center;
+  margin: auto;
+  position: relative;
+  left: 20%;
+  border: groove 5px darkcyan;
+  background-color: lightblue;
 }
 .prevbutton:hover,
 .forwardbutton:hover{
-	background-color: gray;
+	background-color: darkslategray;
+	cursor: pointer;
+	border: groove 5px cyan;
+	
 }
 .slide{
    display: none; 
    height: 100%;  
    width: 100%;
    transition: all 3s;
-   opacity: 0;
+   
 }
 .slide.active{
-display: inline;
+display: flex
 opacity: 1;
 }
 .slide.next{
 	display: none;
-  float: left;
+  
 }
 .slide.prev{
 	display: none;
-
 }
 
 .circle{
-	height: 24px;
-	width: 24px;
-	border-radius: 24px;
+	height: 3.9vh;
+	width: 3.9vh;
+	border-radius: 50%;
 	background-color: #aa5864;
 	position: absolute;
 	left: 0;
@@ -468,9 +479,7 @@ opacity: 1;
 .sidebar{
 	height: 100vh;
 	width: 6vw;
-	background-color: slategray;
-
-  
+	background-color: slategray;  
 	position: fixed;
 	top:1;
 	transition: 200ms ease;
@@ -487,17 +496,14 @@ opacity: 1;
 	border-left: 0px; */
 	display: inline-block;
 	box-sizing: border-box;
-
+  left: -4.5%;  opacity: 1;
+  transition: 0.6s;
 /*	padding: 4px; */	
-  animation: navpan 120s infinite linear;
 }
-@keyframes navpan{
-	0%{
-		background-position: 0 0;
-	}
-	100% {
-		background-position: 0 200em;
-	}
+.sidebar:hover{
+	opacity: 1;
+left: 0%;
+
 }
 .sidebarlink{
 	width: 100%;

@@ -8,44 +8,96 @@
 	<title>Designs | SRS</title>
 	<style>
 	     /* override here */ 
+	     .circle 
+	     {
+	     	z-index: 2;
+	     }
      #logoanchor{
      	border-bottom: 7px gray groove;
      	height: 20vh;
+     	z-index: 2;
+
      	
      }
-     #header{
-     	background: #100e1c; 
+     #header{ 
         display: inline-flex;
         flex-direction: column;
      }
 .navoption{
+	padding: 2vh;
 	margin: auto;
-	align-self: center;
-	border: white 1px;
+	align-self: center;	
 	height: 70vh;
 	width: 50vw;
-	background: white;
 	overflow: hidden;
 	display: inline-flex;
 	flex-direction: column;
 	border-radius: 20%;
-	background: gray;
-	border: 5px groove darkslateblue;
-	
-
+background-color: #7f53ac;
+background-image: linear-gradient(340deg, #8f33ac 10%, #647dee 74%);
+	border: 5px groove gray;
+	z-index: 1;
+	box-sizing: border-box ;
+}
+.prevbutton,
+.forwardbutton{
+	z-index: 4;
 }
 .optionimg{
 	align-self: center;
 	margin: auto;
 	border-radius: 2%;
+	width: 17vw;
 }
 .navtxt{
 	align-self: center;
 	margin: auto;
-	font-family: 'poppins',cursive;
+	width: 15vw;
+	height: 1vh;	
+	box-sizing: border-box;
+	}
+.link{
+		font-size: 5vh;
+		margin: auto;
+		align-self: center;
+	
+	}
+.navcontainer{
+   display: flex;
+   flex-direction: row;
+   width: 100%;
+   height: 100%;
+	z-index: 3;
 }
+@keyframes linkpan {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 295px 0;
+  }
+}
+.box{
+	align-self: center;
+	display: inline-flex;
+	flex-direction: column;
+	width: 18vw;
+	height: 66vh;
+	transition: 0.7s;
+	border: 0.5px solid transparent;
+	box-sizing: border-box;
+	margin: auto;
 
-	</style>
+
+}
+.box:hover{
+	cursor: pointer;
+	border: 0.5px groove black;
+background-color: #f8ceec;
+background-image: linear-gradient(315deg, #f8ceec 0%, #a88beb 74%);
+;
+}
+</style>
 </head>
 <body onmouseleave="hidetrail()" onmouseenter="showtrail()">
     <div class="circle"></div>
@@ -60,9 +112,29 @@
 	<div class="circle"></div>
 <header id="header">
 	<div id="logoanchor">
-<img src="SRS.png" id="logo" height="90%"><img src=""><img src="phone_icon2.png" id="contacticon"><span class="home_text"> Shravan Swami<br>Contact Us<br>9867742312</span>
+<a href="index.html">
+	<img src="SRS.png" id="logo" height="90%">
+	<img src="phone_icon2.png" id="contacticon">
+</a>
+<span class="home_text"> Shravan Swami<br>
+	Contact Us<br>
+9867742312</span>
    </div>
-   <div class="slidecont navoption"><img src="bt\bt03.jpeg" class="optionimg"><span class="navtxt">Bathroom Designs</span></div><button class="forwardbutton "></button>
+   <div class="navcontainer">
+   <button class="prevbutton" onclick="handleBackwardButtonClick()"></button>
+   <div class="slide active navoption" onclick="window.location.href='btdesigns.html'">
+   	<div class="box">
+   		<img src="bt\bt03.jpeg" class="optionimg">
+   		<span class="link navtxt">Bathroom Designs</span>
+   	</div>
+   </div>
+   <div class="slide next navoption">
+   	<div class="box">
+   		<img src="Ceiling\Ceiling 1.jpeg" class="optionimg">
+   		<span class="link navtxt">Ceiling designs</span>
+   	</div>
+   	</div>
+   	<button onclick="handleForwardButtonClick()"class="forwardbutton "></button>
 </header>	
 	
 </body>

@@ -1,4 +1,4 @@
-//---- slide buttons ---- //
+//---- slide buttons ---- //  
 const forwardButton = document.querySelector('.forwardbutton');
 const backwardButton = document.querySelector('.prevbutton');
 const slideContainers = document.querySelectorAll('.slide');
