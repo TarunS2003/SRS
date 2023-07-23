@@ -232,5 +232,40 @@ const observer1 = new IntersectionObserver((entries) => {
 
 const navbar = document.querySelector('header');
 observer1.observe(navbar);
+     
 
+   document.addEventListener("keydown", function(event) {
+      switch (event.key) 
+      {case "ArrowLeft":
+          handleBackwardButtonClick();
+          break;
+        case "ArrowRight":
+          handleForwardButtonClick();
+          break;
+      }
+    });
+   // sidebar
+let btnav = document.querySelector('.navbar');
 
+function hidensidebar() {
+ btnav.classList.add('hidenav');
+}
+
+function showsidebar() {
+  btnav.classList.remove('hidenav');
+}
+
+const observer2 = new IntersectionObserver((entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      hidensidebar();
+    } else {
+      showsidebar();
+    }
+  });
+}, {
+   threshold: 0.1
+});
+
+const trigger = document.querySelector('header');
+observer2.observe(trigger);
